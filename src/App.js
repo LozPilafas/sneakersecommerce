@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { Carousel } from "./Carousel";
+import { MobileMenu } from "./MobileMenu";
+import { ProductBody } from "./ProductBody";
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    
+   <MobileMenu/>
+   {/** Carousel takes one prop (urlList) - a list of URL images for the product */}
+   <Carousel urlList={['/assets/image-product-1.jpg','/assets/image-product-2.jpg','/assets/image-product-3.jpg']}/>
+   <ProductBody title="Fall Limited Edition Sneakers" description="These low-profile sneakers are your perfect casual wear companion. Featuring a 
+  durable rubber outer sole, they’ll withstand everything the weather can offer." price="125.00" reduced={{reduced:true,percentage:50}}/>
+   </>
   );
 }
 

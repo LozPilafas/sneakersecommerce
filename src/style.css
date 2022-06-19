@@ -1,0 +1,274 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+h3{
+    color: orange;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-size: 12px;
+    margin: 10px 0px 10px 0px;
+}
+
+
+h1{
+    color: black;
+    font-weight: 700;
+    font-size: 30px;
+    margin: 10px 0px 10px 0px;
+    
+}
+
+.mobile-menu
+{
+    height: 70px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.logo{
+    margin-left:15px;
+}
+
+.avatar{
+    margin-left:20px;
+}
+
+.menu-logo-holder
+{
+    margin-inline: 15px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    
+    
+}
+
+.carousel-frame
+{
+    width: 100%;
+    height: 300px;
+    background-color: hsl(26, 100%, 55%);
+    z-index: -10;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+
+}
+
+.carousel-image{
+    position: absolute;
+    width: 100%;
+    object-fit:cover;
+    max-height: 300px;
+    max-width: 550px;
+    z-index: 1;
+}
+
+.next-icon
+{
+    width: 18px;
+    height: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 50px;
+    z-index: 2;
+    margin-right: 10px;
+}
+
+.next-icon:hover{
+    background-color: hsl(26, 100%, 55%);
+    padding: 13px;
+    border: 3px solid white;
+}
+
+.back-icon
+{
+    width: 18px;
+    height: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 50px;
+    z-index: 2;
+    margin-left: 10px;
+}
+
+.back-icon:hover{
+    background-color:hsl(26, 100%, 55%);
+    padding: 13px;
+    border: 3px solid white;
+}
+
+.product-body-container
+{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 200px;
+}
+
+.product-body-description
+{
+    color: hsl(220, 1%, 58%);
+    line-height: 25px;
+    margin: 10px 0px 10px 0px;
+    
+}
+
+.product-description-price
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-description-price h1
+{
+    display: inline;
+}
+
+.product-description-price-pc
+{
+    letter-spacing: 1px;
+    color: orange;
+    font-weight: 700;
+    background-color: hsl(25, 100%, 94%);
+    padding: 7px 12px 7px 12px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.product-description-price-old
+{
+    letter-spacing: 1px;
+    text-decoration: line-through;
+    color: hsl(220, 14%, 75%);
+    font-weight: 700;
+    
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+.product-body-quantity-holder
+{
+    padding: 30px 10px 30px 0px;
+    width: 100%;
+    
+}
+
+.product-body-quantity-backdrop
+{
+    background-color: hsl(223, 64%, 98%);
+    height: 70px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-body-quantity-button
+{
+    color: orange;
+    font-weight: 700;
+    font-size: 40px;
+    padding: 0px 20px 0px 20px;
+    cursor: pointer;
+    
+}
+
+.product-body-addtocart{
+    color: white;
+    background-color: hsl(26, 100%, 55%);
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    box-shadow: #ff9800a6 0px 6px 20px 0px;
+    cursor: pointer;
+}
+.product-body-addtocart:hover{
+    color: white;
+    background-color: hsla(26, 100%, 55%, 0.873);
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    border-radius: 15px;
+    box-shadow: #ff9800a6 0px 6px 20px 0px;
+}
+
+.product-body-addtocart:active{
+    box-shadow: none;
+   
+}
+
+
+
+
