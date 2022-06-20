@@ -2,23 +2,26 @@ import logo from './assets/logo.svg'
 import menu from './assets/icon-menu.svg'
 import basket from './assets/icon-cart.svg'
 import profilePic from './assets/image-avatar.png'
+import { MobileCart } from './MobileCart'
 
 
-export function MobileMenu()
+export function MobileMenu(props)
 {
     return(
         <>
         <div className="mobile-menu">
             <div className='menu-logo-holder'>
-                <img src={menu}  alt="menu" />
+                <img src={menu}  alt="menu" onClick={props.toggleSidebar} />
                 <img src={logo} className="logo" width='120px' alt='logo'/>
             </div>
             <div className='menu-logo-holder'>
-                <img src={basket}  alt="basket"  width="25px"/>
-                <img src={profilePic} className="avatar" width='40px' alt='avatar'/>
+                <img src={basket}  alt="basket"  width="25px" onClick={props.toggleCart}/>
+                <img src={profilePic} className="avatar" width='30px' alt='avatar'/>
             </div>
+            
 
         </div>
+        <MobileCart visible={props.visible}  />
         </>
     )
 }

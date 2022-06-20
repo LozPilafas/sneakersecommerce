@@ -1,5 +1,5 @@
 import { useState } from "react";
-import cartIcon from "./assets/icon-cart.svg";
+
 
 export function ProductBody(props) {
   const [qty, setQty] = useState(0);
