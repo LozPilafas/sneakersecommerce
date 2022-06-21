@@ -15,13 +15,14 @@ export function MobileMenu(props)
                 <img src={logo} className="logo" width='120px' alt='logo'/>
             </div>
             <div className='menu-logo-holder'>
+               <span className='basket-counter' style={{visibility:props.cartItems[0]?.qty?'visible':'hidden'}}>{props.cartItems[0]?.qty}</span>
                 <img src={basket}  alt="basket"  width="25px" onClick={props.toggleCart}/>
                 <img src={profilePic} className="avatar" width='30px' alt='avatar'/>
             </div>
             
 
         </div>
-        <MobileCart visible={props.visible}  />
+        <MobileCart visible={props.visible} items={props.cartItems} removeFromCart={props.removeFromCart} />
         </>
     )
 }

@@ -7,6 +7,7 @@ export function Carousel(props)
     const imgUrlList=props.urlList;
     const [imgs,setImgs]=useState(imgUrlList)
     const [selectedImage,setSelectedImage]=useState(0);
+    
 
 
 

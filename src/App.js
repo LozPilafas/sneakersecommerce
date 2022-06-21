@@ -2,15 +2,22 @@ import { Carousel } from "./Carousel";
 import { MobileMenu } from "./MobileMenu";
 import { MobileSideMenu } from "./MobileSideMenu";
 import { ProductBody } from "./ProductBody";
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 
 
 
 
-function App() {
+function App(props) {
 
   const [sidebarVisible,setSidebarVisibile]=useState(false);
   const [cartVisible,setCartVisible]=useState(false)
+  const [cartItems,setCartItems]=useState([])
+
+  
+
+  
+
+
 
   //function to passdown - to toggle sidebar
   const toggleSidebar=()=>
@@ -24,18 +31,55 @@ const toggleCart=()=>
 {
   if(!cartVisible) setCartVisible(true)
     else setCartVisible(false)
+}
+
+//function to pass down - add to cart
+const addToCart=(item,qty)=>
+{
+  
+  const fIndex=cartItems.findIndex((ArrayItem)=> ArrayItem.id===item.id)
+  if(fIndex==-1)
+  {
+
+  setCartItems([...cartItems,{...item,qty:qty}])
+  }
+  else{ 
+
+    
+    const updatedCart=cartItems.map(arrayItem=>{
+      if(arrayItem.id===item.id)
+      {
+        arrayItem.qty+=qty;
+        return arrayItem
+      }
+      
+      
+    })
+
+    setCartItems([...updatedCart])
+    
+    
+    
+
+  }
+
+
 
 }
 
+//function to pass down - empty cart
+const removeFromCart=()=>{
+
+  setCartItems([])
+}
   return (
     <>
     <MobileSideMenu toggleSidebar={toggleSidebar} sidebarVisible={sidebarVisible}  />
     
-   <MobileMenu toggleSidebar={toggleSidebar} toggleCart={toggleCart} visible={cartVisible} />
+   <MobileMenu toggleSidebar={toggleSidebar} toggleCart={toggleCart} visible={cartVisible} cartItems={cartItems} removeFromCart={removeFromCart} />
    {/** Carousel takes one prop (urlList) - a list of URL images for the product */}
-   <Carousel urlList={['/assets/image-product-1.jpg','/assets/image-product-2.jpg','/assets/image-product-3.jpg']}/>
-   <ProductBody title="Fall Limited Edition Sneakers" description="These low-profile sneakers are your perfect casual wear companion. Featuring a 
-  durable rubber outer sole, they’ll withstand everything the weather can offer." price="125.00" reduced={{reduced:true,percentage:50}}/>
+   <Carousel urlList={props.item.galleryUrlList}/>
+   <ProductBody title={props.item.title} description={props.item.description} price={props.item.price} reduced={{reduced:props.item.reduced,percentage:props.item.percentage}} addToCart={addToCart} item={props.item} />
    </>
   );
 }
